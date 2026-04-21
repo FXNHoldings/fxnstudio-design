@@ -1,0 +1,85 @@
+---
+layout: base.njk
+title: "Contact | FXN Studio"
+description: "Get in touch with FXN Studio. Send a project brief for web design, development, eCommerce or SEO services in Perth, WA."
+bodyClass: "page-contact wp-singular"
+cssFile: "style.css"
+jsBundle: "bundle.js"
+---
+<main role="main">
+  <section class="page__heading">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1 class="h1">Let's talk</h1>
+          <p class="subtitle h4">Every project is different — use the form below to send a brief and I'll come back to you with a tailored quote.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section__first padded">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/contact/success/" class="contact-form">
+            <input type="hidden" name="form-name" value="contact">
+            <p style="display:none"><input name="bot-field"></p>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-input">
+                  <label for="first-name">First Name *</label>
+                  <input type="text" id="first-name" name="first-name" placeholder="First Name" required autocomplete="given-name">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-input">
+                  <label for="last-name">Last Name *</label>
+                  <input type="text" id="last-name" name="last-name" placeholder="Last Name" required autocomplete="family-name">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-input">
+              <label for="your-email">Email Address *</label>
+              <input type="email" id="your-email" name="your-email" placeholder="your@email.com" required autocomplete="email">
+            </div>
+
+            <div class="form-input">
+              <label for="your-website">Website URL</label>
+              <input type="url" id="your-website" name="your-website" placeholder="https://yourwebsite.com" autocomplete="url">
+            </div>
+
+            <div class="form-input">
+              <label for="your-message">Project Brief *</label>
+              <textarea id="your-message" name="your-message" placeholder="Tell me about your project..." rows="8" required></textarea>
+            </div>
+
+            <div class="form-input">
+              <label>Type of enquiry</label>
+              <div class="radio-group">
+                <label class="custom-control custom-radio">
+                  <input type="radio" name="contact-type" value="Project" checked class="custom-control-input">
+                  <span class="custom-control-label">New Project</span>
+                </label>
+                <label class="custom-control custom-radio">
+                  <input type="radio" name="contact-type" value="Support" class="custom-control-input">
+                  <span class="custom-control-label">Ongoing Support</span>
+                </label>
+                <label class="custom-control custom-radio">
+                  <input type="radio" name="contact-type" value="Enquiry" class="custom-control-input">
+                  <span class="custom-control-label">General Enquiry</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-input">
+              <button type="submit" class="btn__black"><span>Send Brief</span></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
