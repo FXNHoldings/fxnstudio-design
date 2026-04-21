@@ -18,11 +18,20 @@ jsBundle: "bundle.js"
     </div>
   </section>
 
-  <section class="section section__first padded">
+  <div id="form-success" style="display:none" class="container" role="alert">
+    <div class="row">
+      <div class="col-lg-8" style="padding: 3rem 0;">
+        <h2 class="h3">Message received.</h2>
+        <p>Thanks for reaching out — I'll review your brief and get back to you within 1–2 business days.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="section section__first padded" id="contact-form-section">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/contact/success/" class="contact-form">
+          <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/contact/?sent=1" class="contact-form">
             <input type="hidden" name="form-name" value="contact">
             <p style="display:none"><input name="bot-field"></p>
 
@@ -82,4 +91,11 @@ jsBundle: "bundle.js"
       </div>
     </div>
   </section>
+
+  <script>
+    if (new URLSearchParams(window.location.search).get('sent') === '1') {
+      document.getElementById('form-success').style.display = 'block';
+      document.getElementById('contact-form-section').style.display = 'none';
+    }
+  </script>
 </main>
