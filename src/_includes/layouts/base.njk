@@ -61,28 +61,6 @@
   {{ content | safe }}
 
   <footer class="footer" id="footer">
-    <div id="footer-top">
-      <div class="container">
-        <img src="/assets/images/logo/fxnstudio_logo.svg" alt="FXN Studio" class="footer-logo" style="width:100px;height:auto;filter:brightness(0) invert(1);">
-      </div>
-    </div>
-    <div id="footer-area">
-      <div class="container">
-        <div class="row">
-          <div class="col-6">
-            <h2 class="h5">FXN Studio | Web Design, Development &amp; SEO in Perth</h2>
-            <p>Based in Perth, Western Australia. I design, build and deploy brands, business websites and web apps then continue to support your business with digital marketing strategies.</p>
-          </div>
-          <div class="col-2 offset-4 text-right">
-            <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/portfolio/">Work</a></li>
-              <li><a href="/contact/">Contact</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
     {% if not hideClientLogos %}
     <div class="footer-clients">
       <div class="container">
@@ -99,6 +77,23 @@
       </div>
     </div>
     {% endif %}
+    <div id="footer-area">
+      <div class="container">
+        <div class="footer-area__inner">
+          <div class="footer-area__brand">
+            <img src="/assets/images/logo/fxnstudio_logo.svg" alt="FXN Studio" class="footer-logo" style="width:100px;height:auto;filter:brightness(0) invert(1);margin-bottom:1.5rem;">
+            <p>Based in Perth, Western Australia. I design, build and deploy brands, business websites and web apps then continue to support your business with digital marketing strategies.</p>
+          </div>
+          <div class="footer-area__nav">
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/portfolio/">Work</a></li>
+              <li><a href="/contact/">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
     <div id="footer-bottom">
       <div class="container">
         <span class="copyright">&copy;2026 FXN Studio. All rights reserved.</span>
