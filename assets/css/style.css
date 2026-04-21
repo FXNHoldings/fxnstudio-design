@@ -39348,3 +39348,41 @@ body .is-layout-grid {
     opacity: .6;
 }
 
+
+/* Footer client logos */
+.footer-clients {
+    padding: 2.5rem 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-clients__logos {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.footer-clients__logos img {
+    height: 28px;
+    width: auto;
+    max-width: 120px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.footer-clients__logos img:hover {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .footer-clients__logos {
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    .footer-clients__logos img {
+        height: 22px;
+    }
+}

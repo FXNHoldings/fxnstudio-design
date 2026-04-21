@@ -63,7 +63,7 @@
   <footer class="footer" id="footer">
     <div id="footer-top">
       <div class="container">
-        <img src="/assets/images/logo/fxnstudio_logo.svg" alt="FXN Studio" height="40" class="footer-logo">
+        <img src="/assets/images/logo/fxnstudio_logo.svg" alt="FXN Studio" class="footer-logo" style="width:100px;height:auto;filter:brightness(0) invert(1);">
       </div>
     </div>
     <div id="footer-area">
@@ -71,7 +71,7 @@
         <div class="row">
           <div class="col-6">
             <h2 class="h5">FXN Studio | Web Design, Development &amp; SEO in Perth</h2>
-            <p>ABN 53274423748 | https://www.fxnstudio.com | contact@fxnstudio.com<br>Mailing Address: PO Box 633, West Perth, WA 6872, Australia.</p>
+            <p>Based in Perth, Western Australia. I design, build and deploy brands, business websites and web apps then continue to support your business with digital marketing strategies.</p>
           </div>
           <div class="col-2 offset-4 text-right">
             <ul>
@@ -83,20 +83,22 @@
         </div>
       </div>
     </div>
-    <div class="marquee">
-      <div class="marquee-content">
-        <span>
-          <span>Web Designer</span>&#x2609;&nbsp;
-          <span>Web Developer</span>&#x2609;&nbsp;
-          <span>Digital Marketer</span>&#x2609;&nbsp;
-          <span>Social Media Manager</span>&#x2609;&nbsp;
-          <span>App Designer</span>&#x2609;&nbsp;
-          <span>UI/UX Designer</span>&#x2609;&nbsp;
-          <span>Logo Designer</span>&#x2609;&nbsp;
-          <span>Branding Expert</span>&#x2609;&nbsp;
-        </span>
+    {% if not hideClientLogos %}
+    <div class="footer-clients">
+      <div class="container">
+        <div class="footer-clients__logos">
+          <img src="/assets/images/logos/motiv.png" alt="Motiv Ring">
+          <img src="/assets/images/logos/awwwards.png" alt="Awwwards">
+          <img src="/assets/images/logos/webby.png" alt="The Webby Awards">
+          <img src="/assets/images/logos/mtv.png" alt="MTV">
+          <img src="/assets/images/logos/factorylux.png" alt="Factorylux">
+          <img src="/assets/images/logos/the-profs.png" alt="The Profs">
+          <img src="/assets/images/logos/workkle.png" alt="Workkle">
+          <img src="/assets/images/logos/trevor-sorbie.png" alt="Trevor Sorbie">
+        </div>
       </div>
     </div>
+    {% endif %}
     <div id="footer-bottom">
       <div class="container">
         <span class="copyright">&copy;2026 FXN Studio. All rights reserved.</span>
