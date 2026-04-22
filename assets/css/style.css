@@ -29773,11 +29773,11 @@ textarea {
 
 .btn__outline-white {
     display: inline-block;
-    line-height: 44px;
+    line-height: 55px;
     color: #fff !important;
     text-decoration: none;
     position: relative;
-    height: 45px;
+    height: 60px;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 800;
@@ -29947,6 +29947,11 @@ main[role=main] {
 @media (min-width:1200px) {
     .section {
         padding: 5rem 0
+    }
+}
+@media (min-width:1200px) {
+    .sm-section {
+        padding: 4rem 0
     }
 }
 
@@ -30965,16 +30970,29 @@ main[role=main] {
 }
 
 .footer #footer-bottom {
-    font-size: .78rem
+    font-size: .78rem;
+    padding: 1rem 0;
 }
 
-.footer #footer-bottom a {
-    float: right;
-    text-decoration: underline
+.footer #footer-bottom .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.footer #footer-bottom a:hover {
-    text-decoration: none
+.footer-legal-nav {
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    margin-left: auto;
+}
+
+.footer-legal-nav a {
+    text-decoration: underline;
+}
+
+.footer-legal-nav a:hover {
+    text-decoration: none;
 }
 
 .footer h2 {
@@ -32818,7 +32836,9 @@ details summary {
 }
 
 #my-clients ul li span {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     z-index: 5;
     padding: 1rem 2rem
@@ -39351,8 +39371,9 @@ body .is-layout-grid {
 
 /* Footer client logos */
 .footer-clients {
-    padding: 2.5rem 0;
+    padding: 1rem 0;
     border-bottom: 1px solid rgba(255,255,255,0.12);
+    background-color: #121312;
 }
 
 .footer-clients__logos {
@@ -39364,7 +39385,7 @@ body .is-layout-grid {
 }
 
 .footer-clients__logos img {
-    height: 30px;
+    height: 80px;
     width: auto;
     max-width: 130px;
     object-fit: contain;
@@ -39380,6 +39401,11 @@ body .is-layout-grid {
 /* Footer area */
 #footer-area {
     padding: 3rem 0;
+    background-color: #121312;
+}
+
+.footer {
+    padding: 0;
 }
 
 .footer-area__inner {
@@ -39428,7 +39454,7 @@ body .is-layout-grid {
         gap: 1.25rem;
     }
     .footer-clients__logos img {
-        height: 22px;
+        height: 50px;
     }
     .footer-area__inner {
         flex-direction: column;
@@ -39437,4 +39463,343 @@ body .is-layout-grid {
     .footer-area__nav ul {
         text-align: left;
     }
+}
+
+/* Stats section */
+.section__stats {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.stats__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.stats__card {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.stats__card:hover {
+    border-color: rgba(255,255,255,0.18);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+    transform: translateY(-3px);
+}
+
+.stats__card:last-child {
+    border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+.stats__number {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    color: #000000;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.stats__label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgba(0,0,0,0.35);
+    margin-bottom: 0.75rem;
+}
+
+.stats__desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(0,0,0,0.55);
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .stats__grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .stats__card {
+        padding: 2rem;
+    }
+    .stats__card:last-child {
+        border-right: 1px solid rgba(255,255,255,0.08);
+    }
+}
+
+/* ── Quote Modal ───────────────────────────────────────────── */
+.qmodal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.qmodal__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.qmodal.is-open .qmodal__backdrop {
+    opacity: 1;
+}
+
+.qmodal__panel {
+    position: relative;
+    z-index: 1;
+    background: #0f1115;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06);
+    width: 100%;
+    max-width: 680px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 2.5rem;
+    transform: translateY(24px);
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), opacity 0.3s ease;
+}
+
+.qmodal.is-open .qmodal__panel {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.qmodal__close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+}
+
+.qmodal__close:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+.qmodal__header {
+    margin-bottom: 2rem;
+}
+
+.qmodal__pretitle {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #f05a28;
+    border: 1px solid rgba(240,90,40,0.35);
+    border-radius: 2rem;
+    padding: 0.25rem 0.75rem;
+    margin-bottom: 0.85rem;
+}
+
+.qmodal__title {
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 0.5rem;
+    line-height: 1.2;
+}
+
+.qmodal__subtitle {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.5);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Form layout */
+.qmodal__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.qmodal__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.qmodal__field label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+}
+
+.qmodal__field input,
+.qmodal__field select,
+.qmodal__field textarea {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    font-family: inherit;
+    width: 100%;
+}
+
+.qmodal__field select option {
+    background: #0f1115;
+    color: #fff;
+}
+
+.qmodal__field input::placeholder,
+.qmodal__field textarea::placeholder {
+    color: rgba(255,255,255,0.25);
+}
+
+.qmodal__field input:focus,
+.qmodal__field select:focus,
+.qmodal__field textarea:focus {
+    border-color: rgba(255,255,255,0.3);
+    box-shadow: 0 0 0 3px rgba(240,90,40,0.15);
+}
+
+.qmodal__field textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Checkboxes */
+.qmodal__checks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+}
+
+.qmodal__checks label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.7);
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 6px;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.qmodal__checks label:hover {
+    border-color: rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.04);
+}
+
+.qmodal__checks input[type="checkbox"] {
+    width: auto;
+    accent-color: #f05a28;
+    flex-shrink: 0;
+}
+
+/* Submit button */
+.qmodal__submit {
+    width: 100%;
+    margin-top: 0.5rem;
+    justify-content: center;
+}
+
+/* Success state */
+.qmodal__success {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.qmodal__success-icon {
+    width: 56px;
+    height: 56px;
+    background: rgba(240,90,40,0.15);
+    border: 1px solid rgba(240,90,40,0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #f05a28;
+    margin: 0 auto 1.25rem;
+}
+
+.qmodal__success h3 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.qmodal__success p {
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 1.5rem;
+}
+
+.qmodal__close-success {
+    display: inline-flex;
+}
+
+/* Scrollbar inside panel */
+.qmodal__panel::-webkit-scrollbar { width: 4px; }
+.qmodal__panel::-webkit-scrollbar-track { background: transparent; }
+.qmodal__panel::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 2px; }
+
+@media (max-width: 600px) {
+    .qmodal__panel { padding: 1.75rem 1.25rem; }
+    .qmodal__row { grid-template-columns: 1fr; }
+    .qmodal__checks { grid-template-columns: 1fr 1fr; }
+}
+
+/* Reset browser defaults when btn classes are on <button> elements */
+button.btn__black,
+button.btn__outline-white {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    font-family: inherit;
+    background-color: transparent;
+}
+
+button.btn__black {
+    background: var(--color-dark-black) !important;
+    color: #ffffff !important;
+}
+
+button.btn__outline-white {
+    background: transparent !important;
+    color: #ffffff !important;
+    border: 1px solid #ffffff;
 }
