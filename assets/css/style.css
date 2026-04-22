@@ -39419,7 +39419,8 @@ body .is-layout-grid {
     max-width: 480px;
 }
 
-.footer-area__brand p {
+.footer-area__brand p,
+.footer #footer-area .footer-area__brand p {
     color: rgba(255,255,255,0.55);
     font-size: 0.9rem;
     line-height: 1.7;
